@@ -13,6 +13,7 @@ render(
   <>
     {/* React.createElement(ColorTool, { colors: colorList }); */}
     <ColorTool colors={colorList} />
+    <ColorTool colors={colorList} />
     <CarTool />
   </>,
   document.querySelector("#root"),
