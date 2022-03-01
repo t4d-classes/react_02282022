@@ -1,4 +1,5 @@
-
+import { ToolHeader } from "./ToolHeader";
+import { ColorList } from "./ColorList";
 
 export const ColorTool = (props) => {
 
@@ -8,18 +9,12 @@ export const ColorTool = (props) => {
   // props.colors = [];
   // props.newProp = "test";
 
-  const colorListItems = props.colors.map(color => <li key={color.id}>
-    {color.name} {color.hexcode}
-  </li>);
+
 
   return (
     <>
-      <header>
-        <h1>Color Tool</h1>
-      </header>
-      <ul>
-        {colorListItems}
-      </ul>
+      <ToolHeader headerText={props.headerText} />
+      <ColorList colors={props.colors} />
     </>
   );
 

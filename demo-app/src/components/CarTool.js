@@ -1,4 +1,4 @@
-
+import { ToolHeader } from "./ToolHeader";
 
 export const CarTool = () => {
 
@@ -9,9 +9,7 @@ export const CarTool = () => {
 
   return (
     <>
-      <header>
-        <h1>Car Tool</h1>
-      </header>
+      <ToolHeader headerText="Car Tool" />
       <table>
         <thead>
           <tr>

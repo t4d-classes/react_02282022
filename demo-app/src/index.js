@@ -11,9 +11,8 @@ const colorList = [
 
 render(
   <>
-    {/* React.createElement(ColorTool, { colors: colorList }); */}
-    <ColorTool colors={colorList} />
-    <ColorTool colors={colorList} />
+    {/* React.createElement(ColorTool, { colors: colorList, headerText: 'Color Tool' }); */}
+    <ColorTool colors={colorList} headerText="Color Tool" />
     <CarTool />
   </>,
   document.querySelector("#root"),
