@@ -1,7 +1,5 @@
 import { useState } from 'react';
 
-import "./CarForm.css";
-
 export const CarForm = () => {
 
   const [ carForm, setCarForm ] = useState({

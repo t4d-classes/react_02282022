@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export const ColorForm = () => {
+export const ColorForm = (props) => {
 
   // const formState = useState(
   //   { name: '', hexcode: '' } // initial form state
