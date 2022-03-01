@@ -1,14 +1,32 @@
+import { useState } from 'react';
+
 import { ToolHeader } from "./ToolHeader";
 import { CarTable } from './CarTable';
 import { CarForm } from './CarForm';
 
 export const CarTool = (props) => {
 
+  const [ cars, setCars ] = useState([ ...props.cars ]);
+
+  const addCar = (car) => {
+
+    setCars([
+      ...cars,
+      {
+        ...car,
+        // calculate the next id
+        id: Math.max(...cars.map(c => c.id), 0) + 1,
+      },
+    ]);
+  
+  };
+
+
   return (
     <>
       <ToolHeader headerText="Car Tool" />
-      <CarTable cars={props.cars} />
-      <CarForm />
+      <CarTable cars={cars} />
+      <CarForm onSubmitCar={addCar} />
     </>
   );
 

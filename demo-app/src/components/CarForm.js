@@ -1,10 +1,12 @@
 import { useState } from 'react';
 
-export const CarForm = () => {
+const initCarForm = () => ({
+  make: '', model: '', year: 1900, color: '', price: 0,
+});
 
-  const [ carForm, setCarForm ] = useState({
-    make: '', model: '', year: 1900, color: '', price: 0,
-  });
+export const CarForm = (props) => {
+
+  const [ carForm, setCarForm ] = useState(initCarForm());
 
   const change = ({ target }) => {
     setCarForm({
@@ -14,7 +16,10 @@ export const CarForm = () => {
     });
   };
 
-  console.log(carForm);
+  const submitCar = () => {
+    props.onSubmitCar({ ...carForm });
+    setCarForm(initCarForm())
+  };
 
   return (
     <form>
@@ -43,7 +48,7 @@ export const CarForm = () => {
         <input type="number" name="price"
           value={carForm.price} onChange={change} />
       </label>
-      <button type="button">Add Car</button>
+      <button type="button" onClick={submitCar}>Add Car</button>
     </form>
   )
 

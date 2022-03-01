@@ -1,6 +1,6 @@
 # Exercise 5
 
-## Steps
+## Requirements
 
 1. Create a new component named Tool Header. Move the "header" section of Car Tool to the new component. Configure the component so the text inside the `H1` can be configured via props.
 

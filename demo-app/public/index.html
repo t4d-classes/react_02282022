@@ -39,5 +39,36 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+    
+
+      const flowers = [
+        { id: 1, name: 'Gardinia' },
+        { id: 2, name: 'Rose' },
+        { id: 3, name: 'Lily' },
+        { id: 4, name: 'Lotus' },
+        { id: 5, name: 'Tulip' },
+      ];
+
+      // immutable way to delete
+      const flowersWithoutALily = flowers.filter(flower => flower.id !== 3);
+
+      console.log(flowersWithoutALily);
+
+      // mutable way to delete
+      const lilyIndex = flowers.findIndex(flower => flower.id === 3);
+      flowers.splice(lilyIndex, 1);
+
+      /*
+      [
+        { id: 1, name: 'Gardinia' },
+        { id: 2, name: 'Rose' },
+        { id: 4, name: 'Lotus' },
+        { id: 5, name: 'Tulip' },
+      ];
+      */
+
+    
+    </script>
   </body>
 </html>
