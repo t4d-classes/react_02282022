@@ -18,8 +18,6 @@ export const CarTable = (props) => {
         {props.cars.map(car => <CarViewRow key={car.id} car={car} />)}
       </tbody>
     </table>
-  
-  )
-
+  );
 
 };

@@ -1,5 +1,3 @@
-
-
 export const CarViewRow = (props) => {
 
   return (

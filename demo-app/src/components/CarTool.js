@@ -3,8 +3,6 @@ import { CarTable } from './CarTable';
 
 export const CarTool = (props) => {
 
-
-
   return (
     <>
       <ToolHeader headerText="Car Tool" />
