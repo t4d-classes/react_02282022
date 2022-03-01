@@ -17,7 +17,7 @@ const carList = [
 render(
   <>
     <ColorTool colors={colorList} />
-    <CarTool cars={carList} />
+    <CarTool  cars={carList} />
   </>,
   document.querySelector("#root"),
 );
