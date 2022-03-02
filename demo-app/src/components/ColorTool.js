@@ -1,17 +1,29 @@
-import { useList } from '../hooks/useList';
 import { ToolHeader } from "./ToolHeader";
 import { ColorList } from "./ColorList";
 import { ColorForm } from './ColorForm';
 
+import { useColorToolStore } from "../hooks/useColorToolStore";
+
+
+
+
 export const ColorTool = (props) => {
 
-  const [ colors, , , appendColor ] = useList([ ...props.colors ]);
+
+  const {
+    sortedColors, addColor,
+    sortAsc, sortDesc,
+  } = useColorToolStore([ ...props.colors ]);
+
+
 
   return (
     <>
       <ToolHeader headerText="Color Tool" />
-      <ColorList colors={colors} />
-      <ColorForm onSubmitColor={appendColor} />
+      <button type="button" onClick={sortAsc}>Sort Asc</button>
+      <button type="button" onClick={sortDesc}>Sort Desc</button>
+      <ColorList colors={sortedColors} />
+      <ColorForm onSubmitColor={addColor} />
     </>
   );
 
