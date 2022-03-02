@@ -6,7 +6,12 @@ import { CarForm } from './CarForm';
 
 export const CarTool = (props) => {
 
+  // both of these are application state
+
+  // persistent data that application was created to manage
   const [ cars, setCars ] = useState([ ...props.cars ]);
+
+  // temporary data used to render the ui at a given moment
   const [ editCarId, setEditCarId ] = useState(-1);
 
   const addCar = (car) => {

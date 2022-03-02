@@ -1,24 +1,19 @@
 import { useState } from 'react';
 
+import { useForm } from '../hooks/useForm';
+
 const initCarForm = () => ({
   make: '', model: '', year: 1900, color: '', price: 0,
 });
 
 export const CarForm = (props) => {
 
-  const [ carForm, setCarForm ] = useState(initCarForm());
-
-  const change = ({ target }) => {
-    setCarForm({
-      ...carForm,
-      [target.name]: target.type === "number"
-        ? Number(target.value) : target.value,
-    });
-  };
+  // component state
+  const [ carForm, change, resetCarForm ] = useForm(initCarForm());
 
   const submitCar = () => {
     props.onSubmitCar({ ...carForm });
-    setCarForm(initCarForm())
+    resetCarForm(initCarForm())
   };
 
   return (

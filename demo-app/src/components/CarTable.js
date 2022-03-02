@@ -11,7 +11,7 @@ export const CarTable = (props) => {
           <th>Make</th>
           <th>Model</th>
           <th>Year</th>
-          <th>Color</th>
+          <th>External Color</th>
           <th>Price</th>
           <th>Actions</th>
         </tr>
