@@ -19,7 +19,10 @@ export const CarEditRow = (props) => {
   };
 
   const saveCar = () =>{
-
+    props.onSaveCar({
+      ...carForm,
+      id: props.car.id,
+    });
   };
 
   return (
@@ -39,7 +42,7 @@ export const CarEditRow = (props) => {
         <button type="button"
           onClick={saveCar}>Save</button>
         <button type="button"
-          onClick={() => null}>Cancel</button>
+          onClick={props.onCancelCar}>Cancel</button>
       </td>
     </tr>
   )
