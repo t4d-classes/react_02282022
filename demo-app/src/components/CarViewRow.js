@@ -10,6 +10,8 @@ export const CarViewRow = (props) => {
       <td>{props.car.price}</td>
       <td>
         <button type="button"
+          onClick={() => props.onEditCar(props.car.id)}>Edit</button>
+        <button type="button"
           onClick={() => props.onDeleteCar(props.car.id)}>Delete</button>
       </td>
     </tr>  
