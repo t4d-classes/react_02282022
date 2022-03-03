@@ -2,7 +2,7 @@ import { ToolHeader } from "./ToolHeader";
 import { CarTable } from './CarTable';
 import { CarForm } from './CarForm';
 
-import { useCarToolStore } from '../hooks/useCarToolStore';
+import { useCarToolStoreAsync } from '../hooks/useCarToolStoreAsync';
 
 export const CarTool = (props) => {
 
@@ -10,7 +10,7 @@ export const CarTool = (props) => {
     cars, editCarId,
     editCar, addCar,
     saveCar, deleteCar, cancelCar
-  } = useCarToolStore([...props.cars]);
+  } = useCarToolStoreAsync([...props.cars]);
 
 
   return (
